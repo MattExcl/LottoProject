@@ -20,16 +20,12 @@ public static void main(String[] args) {
 	int lottoNumbers = 0;
 	int totalNums = 0;
 	int input;
-	int [] given = new int[5]; 
-	int [] round = new int[5]; 
-		
-	input = in.Next(int);}
+	input = in.nextInt();
 	
 	while(totalNums < 5){
-		int lottoNumbers = input; //Here is where the numbers will be that get added to the array
+		lottoNumbers = 0; //Here is where the numbers will be that get added to the array
 		totalNums++;
 	}
-  }
 	
   
   
