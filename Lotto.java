@@ -34,9 +34,11 @@ public static void main(String[] args) {
 	
 	input = in.nextInt();
 	
-	while(totalNums < 5){
+	for(int i = 0; i < 5; i++) { //maybe the problem area?
 		lottoNumbers = 0; //Here is where the numbers will be that get added to the array
+		System.out.println(input);
 		totalNums++;
+		
 	}
 	
   
