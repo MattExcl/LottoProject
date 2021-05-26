@@ -18,7 +18,7 @@ public class Lotto {
 public static void main(String[] args) {	
 	Scanner in = new Scanner(System.in);
 		int numofjackpot = 0;
-		int numofmatching;
+		int numofmatching=-1;
 		int input=-1;
 		int [] given = new int[5]; 
 		int [] round = new int[5]; 
@@ -98,7 +98,9 @@ public static void main(String[] args) {
 	//	if(input<20 && input>0) {
 	//		given[i]=input; }
 
+	
 		
+		winnings[numofmatching]++; 	
 	}
 
 
