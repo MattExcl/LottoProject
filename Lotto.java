@@ -71,11 +71,18 @@ public static void main(String[] args) {
 //}
 	  
 		
-  // Random num gen
+ // Random num gen
 		//Array given[5],   int [] given = new int[5]; 
-		
-		//(int)(Math.random()*100.0);
-		
+		for(int i =0;i<5;i++) {
+			round[i]=(int)((Math.random()*20)+1);		// might not need this line
+			for(int j =0;j<5;j++) {
+				if((round[i]==round[j])&&(i!=j)) {
+						round[j]=(int)((Math.random()*20)+1);j--;
+					 
+					}
+				}
+			}
+		System.out.println("winning numbers: "+Arrays.toString(round));
 		//checker
 // random grab num from an array list
 	/*
