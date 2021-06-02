@@ -38,20 +38,13 @@ Scanner in = new Scanner(System.in);
 		for(int i =0;i<5;i++) {  
 			
 			System.out.print((i+1) +": ");   
-			
-			input =in.nextInt();//(int)((Math.random()*20)+1);		//in.nextInt(); //instead of math.random
-			
+			given[i] =in.nextInt();				//(int)((Math.random()*20)+1);		//in.nextInt(); //instead of math.random	
 			for(int j =0;j<i;j++) {
-			
-				if((given[i]==given[j])&&(i!=j)) {
-			
+				if((i!=j)&&(given[i]==given[j])) {
 					System.out.print(errorForInput()+"\n");					//////PROBLEM!!!!! around here?
-			
-					given[j]=input; 
-			
-					i--;
+					System.out.print((i+1) +": "); 
+					given[i]=in.nextInt();	 
 					j=0;
-					
 					}
 				}
 			
@@ -129,8 +122,14 @@ Scanner in = new Scanner(System.in);
 			for(int j =0;j<5;j++) {
 				if(given[i]==round[j]) {
 					numofmatching++; }
+				
 				}
 			}
+		
+		//winnings[numofmatching]++;
+		
+		
+		
 		System.out.println("\nRound "+(r+1)+":\nWinning Numbers: "+Arrays.toString(round)+"\nYour Numbers: "+Arrays.toString(given));
 		System.out.println("There where "+(numofmatching+1)+" matches.");
 				
@@ -151,11 +150,19 @@ Scanner in = new Scanner(System.in);
 	//		given[i]=input; }
 	
 	
-		//winnings[numofmatching]++; 
+		
+		
+	
+		
+		
+		
 		System.out.print("\n--- Thanks for Playing!---\n\n Below is the Frequency table and winnings\n\nFrequency Table: \n");	
 		
 			for(int i =1;i<=20;i++) { if(i%10==1) {System.out.println();} System.out.print((i)+": "+(((fqcy[i]/104.0)*10))+"\t");}
 					
+			
+			
+			
 	}
 	
 	
