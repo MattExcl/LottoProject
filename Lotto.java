@@ -76,7 +76,7 @@ Scanner in = new Scanner(System.in);
 		//	totalNums++;}
 //}
 	  
-		
+		for(int r =0;r<104;r++) {
   // Random num gen
 		//Array given[5],   int [] given = new int[5]; 
 		for(int i =0;i<5;i++) {
@@ -93,13 +93,13 @@ Scanner in = new Scanner(System.in);
 				}
 		
 		
-		System.out.println("winning numbers: "+Arrays.toString(round));
+		System.out.println("\nRound "+(r+1)+":\nWinning Numbers: "+Arrays.toString(round)+"\nYour Numbers: "+Arrays.toString(given));
 		
 		
 		//for(int i =0;i<5;i++) { for(int j =0;j<5;j++) {
 				//if((round[i]==round[j])&&(i!=j)) {
 		//checker
-		for(int t =0;t<5;t++)
+		
 		numofmatching=-1;
 		for(int i =0;i<5;i++) {
 			
@@ -108,8 +108,9 @@ Scanner in = new Scanner(System.in);
 				if(given[i]==round[j]) {
 					numofmatching++; }
 				}
+			}
 				
-				
+	}	
 				
 // random grab num from an array list
 	/*
@@ -127,9 +128,9 @@ Scanner in = new Scanner(System.in);
 	
 	
 		//winnings[numofmatching]++; 
-		System.out.print("--- Thanks for Playing!---\n\n Below is the Frequency table and winnings\n\nFrequency Table: \n");	
+		System.out.print("\n--- Thanks for Playing!---\n\n Below is the Frequency table and winnings\n\nFrequency Table: \n");	
 		
-			for(int i =1;i<=20;i++) { if(i%10==1) {System.out.println();} System.out.print((i)+": "+(int)(((fqcy[i]/104.0)*10))+"\t");}
+			for(int i =1;i<=20;i++) { if(i%10==1) {System.out.println();} System.out.print((i)+": "+(((fqcy[i]/104.0)*10))+"\t");}
 					
 	}
 	
