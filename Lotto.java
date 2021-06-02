@@ -36,18 +36,42 @@ Scanner in = new Scanner(System.in);
 		System.out.println("Welcom to lotto, What are your 5 numbers? press return after each number:");
 		
 		for(int i =0;i<5;i++) {  
+			
 			System.out.print((i+1) +": ");   
-			input =(int)((Math.random()*20)+1);//in.nextInt();   
-			if(input<21 && input>0) {
-				
-				
-				given[i]=input; 
+			
+			input =in.nextInt();//(int)((Math.random()*20)+1);		//in.nextInt(); //instead of math.random
+			
+			for(int j =0;j<i;j++) {
+			
+				if((given[i]==given[j])&&(i!=j)) {
+			
+					System.out.print(errorForInput()+"\n");					//////PROBLEM!!!!! around here?
+			
+					given[j]=input; 
+			
+					i--;
+					j=0;
+					
+					}
 				}
-			else {
-				System.out.print(errorForInput()+"\n");
-				i--;
-				}  
-			}// put in a for loop that checks once all are inputed, to see if any repeat could use method
+			
+		
+
+			//if(input<21 && input>0) {	
+			//	given[i]=input; 
+			//	}
+		//	else {
+			//	System.out.print(errorForInput()+"\n");
+			//	i--;
+			//	}  
+			
+			}
+			System.out.println("Your Ticket: "+Arrays.toString(given));
+			
+			
+			
+			
+		// put in a for loop that checks once all are inputed, to see if any repeat could use method
 		/*for(int i =0;i<5;i++) {
 			for(int j =0;j<5;j++) {
 				if((given[i]==given[j])&&(i!=j)) {
@@ -58,14 +82,15 @@ Scanner in = new Scanner(System.in);
 				}
 			}
 		*/
-		
-		System.out.println("Your Ticket: "+Arrays.toString(given));
-		
-		
-		
-		
-	
-		
+		for(int i =0;i<5;i++) {
+			round[i]=(int)((Math.random()*20)+1);		// might not need this line
+			for(int j =0;j<5;j++) {
+				if((i!=j)&&(round[i]==round[j])) {
+						round[j]=(int)((Math.random()*20)+1);j=0; 
+					}		
+				}
+			}
+
 		
 		
 		
@@ -93,8 +118,7 @@ Scanner in = new Scanner(System.in);
 				}
 		
 		
-		System.out.println("\nRound "+(r+1)+":\nWinning Numbers: "+Arrays.toString(round)+"\nYour Numbers: "+Arrays.toString(given));
-		
+	
 		
 		//for(int i =0;i<5;i++) { for(int j =0;j<5;j++) {
 				//if((round[i]==round[j])&&(i!=j)) {
@@ -102,13 +126,13 @@ Scanner in = new Scanner(System.in);
 		
 		numofmatching=-1;
 		for(int i =0;i<5;i++) {
-			
-		
 			for(int j =0;j<5;j++) {
 				if(given[i]==round[j]) {
 					numofmatching++; }
 				}
 			}
+		System.out.println("\nRound "+(r+1)+":\nWinning Numbers: "+Arrays.toString(round)+"\nYour Numbers: "+Arrays.toString(given));
+		System.out.println("There where "+(numofmatching+1)+" matches.");
 				
 	}	
 				
